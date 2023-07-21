@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+      - '6006:6006'
+    volumes:
+      - .:/home/node/app
+      - ~/.ssh:/home/node/.ssh
+    extra_hosts:
+      - 'host.docker.internal:172.17.0.1'
